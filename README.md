@@ -24,3 +24,66 @@ Joint genotyping of all samples to produce a cohort VCF file.
 Variant Quality Score Recalibration (VQSR) to filter high-confidence variants.
 Annotation using snpEff to classify variants based on genomic impact and functional categories.
 Special focus on variants in cancer-associated genes and their regulatory regions.
+
+## Installation
+
+Choose the installation method based on your system architecture.
+
+### Standard Installation (Windows/Linux/Intel Mac)
+
+Create and activate a conda environment:
+
+```sh
+conda create -n variant_analysis
+conda activate variant_analysis
+```
+
+
+
+
+Install all required tools:
+```sh
+conda install -c bioconda -c conda-forge gatk samtools bwa bcftools snpeff
+```
+
+
+
+### Apple Silicon (M1/M2)
+
+Configure environment and channels:
+
+```sh
+conda create -n gatk_pipeline
+conda activate gatk_pipeline
+
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+```
+
+Install tools individually:
+
+```sh
+conda install -c bioconda -c conda-forge samtools
+conda install -c bioconda -c conda-forge bwa
+conda install -c bioconda -c conda-forge bcftools
+conda install -c bioconda -c conda-forge snpeff
+conda install -c bioconda -c conda-forge openjdk=8
+conda install -c bioconda gatk4
+```
+
+#### Verify Installation
+
+Check if all tools are installed correctly:
+
+```sh
+samtools --version
+bwa
+bcftools --version
+gatk --list
+snpEff -version
+
+```
+
+
+
